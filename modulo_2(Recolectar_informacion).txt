@@ -1,0 +1,45 @@
+RECOLECTAR INFORMACION
+
+Footprinting, information gathering, fingerprinting...
+
+Herramientas de uso online con material publico:
+Whois --> en consola seria: 
+    whois dominio
+    ping dominio --> obtenemos la ip del objetivo
+    traceroute dominio --> saltos hasta la ip objetivo
+Plugins:
+    firefox --> tools --> addons
+    wappalyzer --> indica estructura de la pagina
+    ip address and domain information --> informacion ip, whois, ...
+    owasp mantra:
+        apt-get install owasp-mantra-ff
+        owasp-mantra-ff --> vamos a la pagina en el vanegador abierto
+        abajo a la derecha sale la barra oculta pasando el raton por encima. 
+        P --> Passive Recon
+    
+Comprobando Passive Recon:
+bing
+ip:<IP> --> muestra todas las paginas dentro de esa misma ip
+
+dnsenum dominio --> conseguimos las dns
+theharvester -d dominio -l 500 -b google --> muestra los 500(maximo) correos de un dominio en el -b (google)
+whatweb -v dominio  --> misma informacion que wappalyzer pero en consola
+wafw00f http://dominio --> peticiones para que salten firewall o antivirus.
+dirb http://dominio --> usa un diccionario por defecto para encontrar directorios 
+
+FOCA
+Nuevo proyecto --> nombre y dominio
+Search All
+Download All
+Extract metadatos 
+Version online para archivos --> https://www.elevenpaths.com/labstools/metashield-analyzer-2/index.html
+
+
+Escaneo interno
+Nmap --> escaneo de ips/puertos de una red 
+ip address
+nmap -v ip/24
+service apache2 start --> en kali
+netstat -antp --> comprobar que apache esta up
+Desde un navegador buscar la web de apache en ip o 127.0.0.1
+lanzamos nmap otra vez para comprobar que encuentra el apache, puerto 80
