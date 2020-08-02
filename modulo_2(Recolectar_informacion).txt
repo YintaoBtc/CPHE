@@ -43,3 +43,51 @@ service apache2 start --> en kali
 netstat -antp --> comprobar que apache esta up
 Desde un navegador buscar la web de apache en ip o 127.0.0.1
 lanzamos nmap otra vez para comprobar que encuentra el apache, puerto 80
+
+#Anonimato
+
+# Tor Browser 
+install
+cebolla options 
+
+# VPN
+protonvpn
+mullvad
+
+#Nmap
+ifconfig
+ip address
+
+nmap -v -Pn 192.168.1.0/24 --> verbose y ping. Silencioso.
+zenmap  --> parte grafica de nmap
+nmap -v -sS 192.168.1.0/24 --> Silencioso
+nmap -v -sT 192.168.1.0/24 --> Mas ruidoso con scan
+
+nmap -v -O 192.168.1.0/24 --> identificar sistema operativo
+nmap -v -O -sV 192.168.1.0/24 --> versiones de los protocolos --> carga 43 scripts
+nmap -v -A 192.168.1.0/24 --> muy ruidoso y muy completo --> carga 148 scripts
+
+#Enum linux
+enum4linux 192.168.1.123
+
+
+#Analisis de vulnerabilidades
+
+#Nikto --> vulnerabilidades en aplicaciones o servidores web --> 80/443
+Muy ruidosa y lenta. 
+nikto -h http://192.168.1.123:20000
+
+#Owasp ZAP --> aplicaciones webs
+Arrancar ZAP, automated scan y añadir URL a atacar
+Esto es intrusivo, hace falta permiso. 
+
+# Nessus
+/etc/init.d/nessusd start
+abrir enlace --> kali:8334
+nessus activation code
+
+
+
+
+
+
