@@ -1,8 +1,8 @@
-RECOLECTAR INFORMACION
+# RECOLECTAR INFORMACION
 
-Footprinting, information gathering, fingerprinting...
+# Footprinting, information gathering, fingerprinting...
 
-Herramientas de uso online con material publico:
+# Herramientas de uso online con material publico:
 Whois --> en consola seria: 
     whois dominio
     ping dominio --> obtenemos la ip del objetivo
@@ -27,7 +27,7 @@ whatweb -v dominio  --> misma informacion que wappalyzer pero en consola
 wafw00f http://dominio --> peticiones para que salten firewall o antivirus.
 dirb http://dominio --> usa un diccionario por defecto para encontrar directorios 
 
-FOCA
+# FOCA
 Nuevo proyecto --> nombre y dominio
 Search All
 Download All
@@ -67,6 +67,11 @@ nmap -v -O 192.168.1.0/24 --> identificar sistema operativo
 nmap -v -O -sV 192.168.1.0/24 --> versiones de los protocolos --> carga 43 scripts
 nmap -v -A 192.168.1.0/24 --> muy ruidoso y muy completo --> carga 148 scripts
 
+nmap -A -p- -v 192.168.1.123 --> escanear todos los puertos --> -p1-65535 o -p-
+
+nmap -p21000 -sV 192.168.1.123 --> escanea el puerto 21000 solo
+
+
 #Enum linux
 enum4linux 192.168.1.123
 
@@ -85,9 +90,26 @@ Esto es intrusivo, hace falta permiso.
 /etc/init.d/nessusd start
 abrir enlace --> kali:8334
 nessus activation code
+update plugins 
 
 
+# Accunetix
+De pago
+Para aplicaciones webs
 
 
+# Burpsuite
+
+# Activar proxy firefox
+open menu --> preferences --> search proxy settings --> manual confi
+proxy http: 127.0.0.1    port: 8080
 
 
+# Joom scan
+joomscan -u <target>
+
+# CMSmap
+./cmsmap.py <target> -f W -F  --> escaneo full sobre WP
+
+# WPscan
+wpscan --url <target.com> -e u ap
