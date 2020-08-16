@@ -1,6 +1,6 @@
-INTRODUCCION
+# INTRODUCCION
 
-Perfil Hacking Etico
+## Perfil Hacking Etico
 
 1º Infraestructura y redes
 2º Sistemas operativos
@@ -14,14 +14,14 @@ Autonomo y trabajo en equipo
 Etica profesional
 
 
-Tipo de Analisis:
+## Tipo de Analisis:
 
 Black Box --> El analista no tiene ningun conocimiento del objetivo
 Gray Box --> El analista conoce muy poco del objetivo
 White Box --> Ambas partes saben que test y cuando se realizaran. 
 
 
-Tipo de auditorias:
+## Tipo de auditorias:
 
 Externa --> Se realiza desde el exterior del objetivo
 Interna --> Se realiza en casa del cliente, internamente. Se puede externa con VPN(no recomendable)
@@ -32,9 +32,9 @@ Movil --> Se realiza sobre dispositivos moviles de una empresa
 
 
 
-ARQUITECTURAS EN redes
+## ARQUITECTURAS EN redes
 
-Modelo OSI
+## Modelo OSI
 
 7 Aplicacion --> aplicaciones, http, FPT, SSH, SMTP, POP3
 6 Presentacion --> Estandariza la forma en que se representan los datos
@@ -51,13 +51,13 @@ Mascara de red: Que porcion de la red esta siendo utilizada para la ip y cual pa
 Gateway: Dispositivo de la red por donde se envian los paquetes que tienen destino la red exterior/interior
 
 
-POC Conexion
-netstat -antp // ps -A | grep sshd --> Saber si SSH esta corriendo.
-ifconfig --> desde kali para saber la ip
-fpt <ip kali> --> conectar por ftp a kali
+### POC Conexion
+`netstat -antp // ps -A | grep sshd` --> Saber si SSH esta corriendo.
+`ifconfig` --> desde kali para saber la ip
+`fpt <ip kali>` --> conectar por ftp a kali
 
 
-MODO NAT Y MODO BRIDGE
+## MODO NAT Y MODO BRIDGE
 
 1) Modo Nat:
     El router se encarga de cambiar la ip local a local externa. 
@@ -68,18 +68,18 @@ MODO NAT Y MODO BRIDGE
     Todo es administrado por el firewall antes de salir al router(ISP).
     Añade ip del rango de red del host
 
-CREANDO EL LABOTORIO
+## CREANDO EL LABOTORIO
 
 Instalamos Vmware workstation Pro
 
 Añadimos Kali Linux como una nueva maquina virtual.
 Instalamos VMware Tools
     Menu VM --> install wmware tools --> Extraemos la carpeta 
-    cd Desktop
-    ls
-    cd vmware-tools-distrib
-    ls
-    ./vmware-install.pl
-    reboot
+    `cd Desktop`\
+    `ls`\
+    `cd vmware-tools-distrib`\
+    `ls`\
+    `./vmware-install.pl`\
+    `reboot`\
 Hacer snapshot de Kali
 
