@@ -11,13 +11,14 @@
     - firefox --> tools --> addons
     - wappalyzer --> indica estructura de la pagina
     - ip address and domain information --> informacion ip, whois, ...
-    - owasp mantra:
+    - Cookie Editor
+        - owasp mantra:
         1. apt-get install owasp-mantra-ff
-        2. owasp-mantra-ff --> vamos a la pagina en el vanegador abierto
+        2. owasp-mantra-ff --> vamos a la pagina abriendo el navegador
         3. abajo a la derecha sale la barra oculta pasando el raton por encima. 
         4. P --> Passive Recon
     
-Comprobando Passive Recon:
+### Comprobando Passive Recon:
 bing
 ip:<IP> --> muestra todas las paginas dentro de esa misma ip
 
@@ -32,6 +33,10 @@ ip:<IP> --> muestra todas las paginas dentro de esa misma ip
 `dirb http://dominio` --> usa un diccionario por defecto para encontrar directorios 
 
 ## FOCA
+https://www.elevenpaths.com/es/labstools/foca-2/index.html
+
+Solo para Windows. 
+
 Nuevo proyecto --> nombre y dominio
 
 Search All
@@ -54,7 +59,7 @@ Nmap --> escaneo de ips/puertos de una red
 
 `netstat -antp` --> comprobar que apache esta up\
 
-Desde un navegador buscar la web de apache en ip o 127.0.0.1. Lanzamos nmap otra vez para comprobar que encuentra el apache, puerto 80
+Desde un navegador buscar la web de apache en 127.0.0.1. Lanzamos nmap otra vez para comprobar que encuentra el apache, puerto 80
 
 ## Anonimato
 
@@ -88,11 +93,9 @@ Desde un navegador buscar la web de apache en ip o 127.0.0.1. Lanzamos nmap otra
 ## Analisis de vulnerabilidades
 
 1. Nikto
-Vulnerabilidades en aplicaciones o servidores web --> 80/443
-
-Muy ruidosa y lenta. 
-
-`nikto -h http://192.168.1.123:20000`
+- Vulnerabilidades en aplicaciones o servidores web --> 80/443
+- Muy ruidosa y lenta. 
+- `nikto -h http://192.168.1.123:20000`
 
 2.  Owasp ZAP
 - Aplicaciones webs
@@ -100,32 +103,31 @@ Muy ruidosa y lenta.
 - Esto es intrusivo, hace falta permiso. 
 
 3. Nessus
-`/etc/init.d/nessusd start`
-
-abrir enlace --> kali:8334
-
-nessus activation code
-
-update plugins 
-
+- `apt update && apt upgrade`
+- https://es-la.tenable.com/products/nessus/select-your-operating-system --> download 64 bit
+- `sudo dpkg -i nessus.deb` 
+- `/etc/init.d/nessusd start`
+- kali:8834
+- https://www.tenable.com/products/nessus/activation-code --> nessus activation code 
+- update plugins 
+- `update-rc.d nessusd enable` --> start when Kali Linux boots
 
 4.  Accunetix
-De pago. Para aplicaciones webs
+- De pago. 
+- Para aplicaciones webs
 
 
-## Burpsuite
+5. Burpsuite
+- Activar proxy firefox
+- open menu --> preferences --> search proxy settings --> manual confi
+- proxy http: 127.0.0.1    
+- port: 8080
 
-### Activar proxy firefox
-open menu --> preferences --> search proxy settings --> manual confi
-
-proxy http: 127.0.0.1    port: 8080
-
-
-### Joom scan
+6. Joom scan
 `joomscan -u <target>`
 
-### CMSmap
+7. CMSmap
 `./cmsmap.py <target> -f W -F` --> escaneo full sobre WP
 
-### WPscan
+8. WPscan
 `wpscan --url <target.com> -e u ap`

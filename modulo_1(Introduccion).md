@@ -66,7 +66,7 @@
 ## MODO NAT Y MODO BRIDGE
 
 1. Modo Nat:
-    - 1.El router se encarga de cambiar la ip local a local externa. 
+    - El router se encarga de cambiar la ip local a local externa. 
     - No es recomendable para implementar un Firewall Perimetral
 
 2. Modo Bridge
